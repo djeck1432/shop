@@ -1,0 +1,38 @@
+<script scr= "{%static "js/jquery.cookie.js"%}"> </script>
+
+
+<div class="cart">В корзине товаров на <span class='summa '>0</span><br>
+	<a class ='oformit' href="/order/">Оформить заказ </a></div>
+
+<script type="text/javascript">
+$(function(){
+	$(".add-to-cart").click(function(){
+		var arr1 = $.cookie('cart');
+		if (!arr1){
+			arr1 ='[]';
+		}
+		$.each(json2, function(index, value){
+			summa1 = summa1 + parseInt(value(['price']));
+		});
+		$('.cart .summa').text(summa);
+
+		var arr = $.cookie('cart');
+		if (!arr){
+			arr ='[]';
+		}
+		var json =$.parseJSON(arr);
+		json.push({
+			'name':$('h1').text,
+			'price':('h2.price').text,
+			'img':('img.products').attr('src'),
+		});
+		$.cookir('cart',JSON.stringify(json), {path: '/'});
+		var summa = 0;
+		$.each(json, function(index, value){
+			summa = summa + parseInt(value(['price']));
+		})
+		$('.cart .summa').text(summa);
+	});
+
+});
+</script>
