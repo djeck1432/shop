@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
-from django.views.i18n import set_language
+# from django.views.i18n import set_language
 
 urlpatterns = patterns('',
                        url(r'^admin/', admin.site.urls),
                        url(r'^$', 'main.views.home'),
-                       url(r'^setlang/', set_language, name="setlang"),
+                       url(r'^i18n/', include('django.conf.urls.i18n')),
                        url(r'^souvenir4you/', 'main.views.home'),
                        url(r'^ru/', include('mainru.urls')),
                        url(r'^item/(?P<alias>[^/]+)', 'main.views.item'),
