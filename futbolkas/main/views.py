@@ -47,3 +47,8 @@ def order(request):
     context = {
     }
     return HttpResponse(render_to_string("korsina.html", context))
+
+
+def pays(request):
+    context = {}
+    return HttpResponse(render_to_string("pay_form.html", context))
