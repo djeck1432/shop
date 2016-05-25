@@ -5,49 +5,45 @@ from .models import *
 
 
 def home(request):
-	category = Category.objects.all()
-	context = {
+    category = Category.objects.all()
+    context = {
 
-		'title' : ' Souvenir4you',
-		'categories' :category,
+        'title': ' Souvenir4you',
+        'categories': category,
 
-	}
-	return HttpResponse(render_to_string("souviner.html",context))
+    }
+    return HttpResponse(render_to_string("souviner.html", context))
 
-def item(request,alias):
-	try:
-		tovar = Item.objects.get(alias=alias)
-	except:
-		return Http404('Not Found ')
-	context = {
 
-		'tovar' :tovar,
+def item(request, alias):
+    try:
+        tovar = Item.objects.get(alias=alias)
+    except Item.DoesNotExist:
+        return Http404('Not Found ')
+    context = {
 
-	}
-	return HttpResponse(render_to_string("item.html",context))
+        'tovar': tovar,
 
-def get_category(request,alias):
-	try:
-		category = Category.objects.get(alias=alias)
-		tovars =Item.objects.filter(category=category)
-	except:
-		return Http404('Not Found')
-	context = {
+    }
+    return HttpResponse(render_to_string("item.html", context))
 
-		'tovars' :tovars,
-		'category': category,
 
-	}
-	return HttpResponse(render_to_string("item.html",context))
+def get_category(request, alias):
+    try:
+        category = Category.objects.get(alias=alias)
+        tovars = Item.objects.filter(category=category)
+    except Category.DoesNotExist:
+        return Http404('Not Found')
+    context = {
+
+        'tovars': tovars,
+        'category': category,
+
+    }
+    return HttpResponse(render_to_string("item.html", context))
 
 
 def order(request):
-
-	context = {
-	}
-	return HttpResponse(render_to_string("korsina.html",context))
-
-
-
-
-
+    context = {
+    }
+    return HttpResponse(render_to_string("korsina.html", context))

@@ -74,6 +74,9 @@
 	width:20px;
 }
 .korzina:after , .summa:after{
-	content 'eu'
+	content: "eu";
 	margin-left: 5px;
+}
+.b-wide{
+	width: 100%;
 }
