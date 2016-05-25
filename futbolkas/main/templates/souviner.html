@@ -69,18 +69,12 @@
 
                         {% for language in languages %}
                             <li role="presentation">
-{#                                <form action="{% url "set_language" %}" method="POST">#}
-{#                                    {% csrf_token %}#}
-{#                                    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />#}
-{#                                    <input name="language" type="hidden" value="{{ language.code }}" />#}
-{#                                    <input class="btn b-wide" type="submit" value="{{ language.name_local }}" />#}
-{#                                </form>#}
-                            <form action="{% url 'set_language' %}" method="post">
-                              {% csrf_token %}
-                              <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
-                              <input name="language" type="hidden" value="en" />
-                              <input class="btn b-wide" type="submit" value="English" />
-                            </form>
+                                <form action="{% url "my_set_language" %}" method="POST">
+                                    {% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+                                    <input name="language" type="hidden" value="{{ language.code }}" />
+                                    <input class="btn b-wide" type="submit" value="{{ language.name_local }}" />
+                                </form>
                             </li>
                         {% endfor %}
                     </ul>
