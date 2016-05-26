@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'mainru',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -44,12 +45,10 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    '',
 ]
 
 ROOT_URLCONF = 'futbolkas.urls'
@@ -118,10 +117,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 gettext = lambda s: s
 
-
 LANGUAGES = (
     ('en', gettext('English'),),
     ('de', gettext('Germany'),),
     ('ru', gettext('Russian'),),
 )
-
