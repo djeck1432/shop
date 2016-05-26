@@ -112,6 +112,9 @@
 </header><!--/header-->
 
 <!--/#cart_items-->
+<iframe src="/pays/" style="z-index:1000;display:none;border:none;position:absolute;height:790px;width:500px;" scrolling="no" id="pay_form">
+</iframe>
+
 {% block contain %}
 <section id="do_action">
     <div class="container">
@@ -124,7 +127,7 @@
                     <div class="sm">{% trans "Total:   " %}<span class='summa'>0</span><br>
 
                         <a class="btn btn-default update" href="">{% trans "Update" %}</a>
-                        <a class="btn btn-default check_out" id="pay" href="{% url "pays" %}">{% trans "Pay" %}</a>
+                        <a class="btn btn-default check_out" id="pay" >{% trans "Pay" %}</a>
                     </div>
                 </div>
             </div>
@@ -170,6 +173,10 @@
         $.each(json2, function (index, value) {
             $('.korzina').append('<div class="product-image-wrapper" style="float:left;height:250px;width:150px;margin-left:40px;"><a href="#" class="close"></a><br /><div class="" ><div  class="productinfo text-center" ><img  class="img-product" src="' + value['img'] + '" alt="" /><h2  class="value">' + value['price'] + '</h2>       <p class="name">' + value['name'] + '</p></div></div></div>');
             summa1 = summa1 + parseInt(value['price']);
+        });
+        $("#pay").click(function () {
+            $("#pay_form").fadeIn('slow');
+            $('#pay_form').css({top:'2%',left:'35%',margin:'-'+($('#info').height() )+'px 0 0 -'+($('#info').width() / 2)+'px'});
         });
         $('.sm .summa').text(summa1);
         $(".close").click(function () {
