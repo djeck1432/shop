@@ -1,5 +1,7 @@
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse, Http404
 from django.template.loader import render_to_string
+from django.views.generic import CreateView
 
 from .models import *
 
@@ -49,6 +51,8 @@ def order(request):
     return HttpResponse(render_to_string("korsina.html", context))
 
 
-def pays(request):
-    context = {}
-    return HttpResponse(render_to_string("pay_form.html", context))
+class PaysCreateView(CreateView):
+    model = Forma
+    fields = '__all__'
+    template_name = "pay_form.html"
+    success_url = "/souvenir4you/"
