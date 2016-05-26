@@ -112,7 +112,7 @@
 </header><!--/header-->
 
 <!--/#cart_items-->
-
+{% block contain %}
 <section id="do_action">
     <div class="container">
         <div class="korzina">
@@ -124,13 +124,15 @@
                     <div class="sm">{% trans "Total:   " %}<span class='summa'>0</span><br>
 
                         <a class="btn btn-default update" href="">{% trans "Update" %}</a>
-                        <a class="btn btn-default check_out" href="">{% trans "Pay" %}</a>
+                        <a class="btn btn-default check_out" id="pay" href="{% url "pays" %}">{% trans "Pay" %}</a>
                     </div>
                 </div>
             </div>
 
         </div>
+    </div>
 </section><!--/#do_action-->
+{% endblock %}
 
 <footer id="footer"><!--Footer-->
 
