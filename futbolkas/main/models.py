@@ -27,3 +27,12 @@ class Item(models.Model):
 
     def __str__(self):
         return "Товар %s" % self.name
+
+# class Forma(models.Model): 
+#     name = models.CharField(max_length=55)
+#     familiy_name= models.CharField(max_length=55)
+#     number = models.IntegerField(default =0)
+#     email=models.CharField(max_length= 55)
+#     country =models.CharField(max_length=55)
+#     city = models.CharField(max_length=55)
+#     adress =models.SlugField()
