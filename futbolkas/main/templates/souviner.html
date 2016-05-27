@@ -14,11 +14,9 @@
     <link href="{% static "css/style.css" %}" media="screen, projection" rel="stylesheet" type="text/css">
     <script type="{% static "text/javascript" %}" src="{% static "js/iosLabelFix.js" %}"></script>
 
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
-
-    <link href="{% static "css/stylish-portfolio.css" %}" rel="stylesheet">
-
-    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/stylish-portfolio.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
 
     <style type="text/css">
         .prod {
@@ -43,8 +41,8 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" style="z-index:1;">
-    <div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="z-index:1;opacity:0.7;">
+    <div class="container" style="margin-left:80px;">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -84,11 +82,10 @@
     </div>
 </nav>
 
-<img style="background-color:#5e0e11;width:80px;border-radius:0 0 35px 30px;position:fixed;top:0px;left:5px;z-index:1000;opacity:0.9;"
-     href="#top" src="{% static "images/icon/logo.png" %}"/>
+<img style="background-color:#5e0e11;width:80px;border-radius:0 0 35px 30px;position:fixed;top:0px;left:5px;z-index:1000;opacity:0.9;" href="#top" src="{% static "images/icon/logo.png" %}"/>
 <!-- Header -->
 <header id="top" class="header" style="box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
-    <iframe style="height:100%;width:100%;border:none;" src=" {% static "fonts/startpage.html" %}">
+    <iframe style="height:100%;width:100%;border:none;" src=" {% static 'fonts/startpage.html' %}" >
         your browser doesn't support iframe
     </iframe>
 </header>
@@ -218,7 +215,7 @@
 
 
 <!-- Call to Action -->
-<aside class="call-to-action bg-primary" style="background: none;margin-bottom:0px;height:200px">
+<aside class="call-to-action bg-primary" style="background: none;margin-bottom:0px;height:100px">
 
 </aside>
 <section style="height:10px;background:#5e0e11;"></section>
@@ -226,7 +223,7 @@
 <section id="contact" class="map">
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
     <div>
-        <div id="daulet" style="height: 400px; width: 100%;"></div>
+        <div id="daulet" style="height: 300px; width: 100%;"></div>
         <script type="text/javascript">
             var locations = [
                 ['Souvenir4You , Führichgasse 3', 48.2047381, 16.3697501, 3],
