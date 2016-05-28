@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>{{ title }}</title>
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
-    <link href="{% static 'css/price-range.css' %}" rel="stylesheet">
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
-    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/price-range.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -32,6 +32,9 @@
             z-index: 10000;
             font-family: Arial, sans-serif;
         }
+		span.glyphicon-remove-sign {
+    font-size: 2.2em;
+}
     </style>
 </head><!--/head-->
 
@@ -111,10 +114,14 @@
     </div><!--/header-bottom-->
 </header><!--/header-->
 
-<!--/#cart_items-->
-<iframe src="/pays/" style="z-index:1000;display:none;border:none;position:absolute;height:790px;width:500px;" scrolling="no" id="pay_form">
-</iframe>
-
+<!--Form-->
+<table id="pay_form" style="display:none;position:absolute;">
+<tr>
+<td><iframe  src="/pays/"  style="z-index:100;border:none;position:absolute;height:790px;width:500px;" scrolling="no" >
+</iframe></td>
+<td valign="top" align="right"><span class="glyphicon glyphicon-remove-sign" style="margin-left:480px;"  ></span></td>
+</tr>
+</table>
 {% block contain %}
 <section id="do_action">
     <div class="container">
@@ -157,7 +164,7 @@
 
 
 <script src="{% static 'js/jquery.js' %}"></script>
-<script scr="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script src="{% static 'js/price-range.js' %}"></script>
 <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -178,7 +185,10 @@
             $("#pay_form").fadeIn('slow');
             $('#pay_form').css({top:'2%',left:'35%',margin:'-'+($('#info').height() )+'px 0 0 -'+($('#info').width() / 2)+'px'});
         });
-        $('.sm .summa').text(summa1);
+		$(".glyphicon").click(function () {
+            $("#pay_form").fadeOut('slow');
+        });
+		$('.sm .summa').text(summa1);
         $(".close").click(function () {
             var arr = $.cookie('cart');
             if (!arr) {
