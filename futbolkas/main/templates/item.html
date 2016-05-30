@@ -99,14 +99,14 @@
 
     <h3 class="title text-center" style="color:black;">{{ tovar }}</h3>
     <div class="container">
-        {% for tovar in tovars %}
+        {% for item in tovars %}
             <div class="product-image-wrapper" style="float:left;height:320px;width:150px;margin-left:40px;">
                 <br/>
                 <div class="single-products">
                     <div class="productinfo text-center">
-                        <img class="img-product" src="{{ tovar.image }}" alt=""/>
-                        <h2 id="{{ tovar.id }}" class="value">{{ tovar.price }}</h2>
-                        <p class="name">{{ tovar.name }}</p>
+                        <img class="img-product" src="{{ item.image.url }}" alt=""/>
+                        <h2 id="{{ item.id }}" class="value">{{ item.price }}</h2>
+                        <p class="name">{{ item.name }}</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart ">
                         </i>Add to cart</a>
                     </div>
