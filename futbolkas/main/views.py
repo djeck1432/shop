@@ -21,7 +21,7 @@ def item(request, alias):
     try:
         tovar = Item.objects.get(alias=alias)
     except Item.DoesNotExist:
-        return Http404('Not Found ')
+        raise Http404('Not Found ')
     context = {
 
         'tovar': tovar,
