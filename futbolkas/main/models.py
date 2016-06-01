@@ -16,7 +16,7 @@ class Category(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=255, verbose_name="Названия товара")
     price = models.IntegerField(default=0, verbose_name="Цена")
-    image = models.ImageField(verbose_name="Фото", upload_to='item')
+    image = models.CharField(max_length=1000, verbose_name="Photo link")
     alias = models.SlugField(verbose_name="alias  категория")
 
     category = models.ForeignKey(Category)
