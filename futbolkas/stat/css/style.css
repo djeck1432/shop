@@ -1,0 +1,82 @@
+
+/* Page Title
+=================================================================== */
+
+#page-title {
+	margin: 0px 0px 0px 0px;
+}
+
+#page-title-inner {
+	padding: 5px 30px;
+}
+
+#page-title h2 {
+	display: inline-block;
+	font-family: "Droid Sans";
+	text-shadow: -1px 1px 1px white;
+	color: grey;
+	font-size: 36px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	position: relative;
+}
+
+#page-title h2:before,
+#page-title h2:after {
+    display: block;
+    height: 1px;
+    content: " ";
+    width: 40%;
+    position: absolute;
+    top: 0.53em;
+	z-index: 1;
+}
+
+
+
+#page-title h2 span {
+	padding: 0px 10px;
+	position: relative;
+	z-index: 2;
+}
+#portfolio-wrapper .post-meta {
+	background: #f0eff4;
+	color: #666;
+	padding: 10px 15px;
+	border-top: 2px solid #f6f6f6;
+	
+}
+@media (max-width:960px) { 
+	#portfolio	{
+		height:550px;
+	}
+}
+.korzina{
+	background: #e5e5e5;
+	font-size:14px;
+	border: 1px solid #000;
+	position: fixed;
+	top:50px;
+	right: 0;
+	width:150px;
+
+}
+.korzina.oformit, .cart.summa{
+	display:block;
+	margin: 0 auto;
+}
+.korzina ,.oformit{
+	width : 100px;
+}
+.korzina , .summa{
+	
+	width:20px;
+}
+.korzina:after , .summa:after{
+	content: "eu";
+	margin-left: 5px;
+}
+.b-wide{
+	width: 100%;
+}
